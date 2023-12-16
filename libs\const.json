@@ -1,0 +1,31 @@
+{
+    "error_message": "Something Went Wrong",
+    "session_less_apis": [{
+    	"URL": "/login",
+    	"METHOD": "POST"
+    },
+    {
+        "URL": "/success_callback",
+        "METHOD": "GET"
+    },
+    {
+        "URL": "/failure_callback",
+        "METHOD": "GET"
+    },
+    {
+        "URL": "/payment/method/failure",
+        "METHOD": "GET"
+    },
+    {
+        "URL": "/payment/method/success",
+        "METHOD": "GET"
+    },
+    {
+        "URL": "/signup",
+        "METHOD": "POST"
+    },
+    {
+        "URL": "/version",
+        "METHOD": "GET"
+    }]
+}

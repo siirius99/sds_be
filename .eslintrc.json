@@ -1,0 +1,30 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": ["airbnb-base", "plugin:security/recommended", "plugin:prettier/recommended"],
+  "plugins": ["security", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-console": "off",
+    "func-names": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "security/detect-object-injection": "off",
+    "no-async-promise-executor": "off",
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "no-await-in-loop": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "no-continue": "off",
+    "new-cap": "off",
+    "no-param-reassign": "off",
+    "global-require": "off",
+    "no-inner-declarations": "off",
+    "no-shadow": "off",
+    "no-nested-ternary": "off"
+  }
+}

@@ -1,0 +1,1233 @@
+{
+  "tables": [
+    {
+      "name": "user",
+      "columns": [
+        "id",
+        "name",
+        "lastname",
+        "email",
+        "password",
+        "phonenumber",
+        "address",
+        "isactive"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": true,
+      "crud_put_enabled": true,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": true,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "name": {
+          "name": "Name",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 100
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": true,
+          "display_name": "Name"
+        },
+        "lastname": {
+          "name": "LastName",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 100
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": true,
+          "display_name": "LastName"
+        },
+        "email": {
+          "name": "Email",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 100
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Email"
+        },
+        "password": {
+          "name": "Password",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 100
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Password"
+        },
+        "phonenumber": {
+          "name": "PhoneNumber",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 100
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "PhoneNumber"
+        },
+        "address": {
+          "name": "Address",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 500
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Address"
+        },
+        "isactive": {
+          "name": "IsActive",
+          "data_type": "boolean",
+          "required": false,
+          "display": false,
+          "options": {
+            "default": 1
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": true,
+            "value": 0
+          },
+          "alterable": false,
+          "display_name": "IsActive"
+        }
+      },
+      "display_name": "User",
+      "type": 1,
+      "tenant": true,
+      "member": false,
+      "member_meta": {}
+    },
+    {
+      "name": "realestateboard",
+      "columns": [
+        "id",
+        "userid",
+        "name",
+        "abbreviation"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": false,
+      "crud_put_enabled": false,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": true,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "userid": {
+          "name": "UserID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "user",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UserID"
+        },
+        "name": {
+          "name": "Name",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Name"
+        },
+        "abbreviation": {
+          "name": "Abbreviation",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Abbreviation"
+        }
+      },
+      "display_name": "RealEstateBoard",
+      "type": 1,
+      "tenant": false,
+      "member": false,
+      "member_meta": {}
+    },
+    {
+      "name": "onboardingdocs",
+      "columns": [
+        "id",
+        "userid",
+        "documentname",
+        "realestateboardid"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": false,
+      "crud_put_enabled": false,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": true,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "userid": {
+          "name": "UserID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "user",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UserID"
+        },
+        "documentname": {
+          "name": "DocumentName",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "DocumentName"
+        },
+        "realestateboardid": {
+          "name": "RealEstateBoardID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "realestateboard",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "RealEstateBoardID"
+        }
+      },
+      "display_name": "OnboardingDocs",
+      "type": 1,
+      "tenant": false,
+      "member": false,
+      "member_meta": {}
+    },
+    {
+      "name": "client",
+      "columns": [
+        "id",
+        "userid",
+        "realestateboardid",
+        "displayname",
+        "clientfirstname",
+        "clientlastname",
+        "streetaddress",
+        "addressline2",
+        "city",
+        "postalcode",
+        "province",
+        "country",
+        "phone",
+        "email",
+        "websiteurl",
+        "contactperson",
+        "contactemail",
+        "contactphone",
+        "apikey",
+        "datafeedenabled",
+        "isdeleted",
+        "createdby",
+        "createddttm",
+        "updatedby",
+        "updateddttm"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": false,
+      "crud_put_enabled": false,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": true,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "userid": {
+          "name": "UserID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "user",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UserID"
+        },
+        "realestateboardid": {
+          "name": "RealEstateBoardID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "realestateboard",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "RealEstateBoardID"
+        },
+        "displayname": {
+          "name": "DisplayName",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "DisplayName"
+        },
+        "clientfirstname": {
+          "name": "ClientFirstName",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ClientFirstName"
+        },
+        "clientlastname": {
+          "name": "ClientLastName",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ClientLastName"
+        },
+        "streetaddress": {
+          "name": "StreetAddress",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "StreetAddress"
+        },
+        "addressline2": {
+          "name": "Addressline2",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Addressline2"
+        },
+        "city": {
+          "name": "City",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "City"
+        },
+        "postalcode": {
+          "name": "PostalCode",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "PostalCode"
+        },
+        "province": {
+          "name": "Province",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Province"
+        },
+        "country": {
+          "name": "Country",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Country"
+        },
+        "phone": {
+          "name": "Phone",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Phone"
+        },
+        "email": {
+          "name": "Email",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Email"
+        },
+        "websiteurl": {
+          "name": "WebsiteUrl",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "WebsiteUrl"
+        },
+        "contactperson": {
+          "name": "ContactPerson",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ContactPerson"
+        },
+        "contactemail": {
+          "name": "ContactEmail",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ContactEmail"
+        },
+        "contactphone": {
+          "name": "ContactPhone",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ContactPhone"
+        },
+        "apikey": {
+          "name": "ApiKey",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ApiKey"
+        },
+        "datafeedenabled": {
+          "name": "DataFeedEnabled",
+          "data_type": "boolean",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "DataFeedEnabled"
+        },
+        "isdeleted": {
+          "name": "Isdeleted",
+          "data_type": "boolean",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Isdeleted"
+        },
+        "createdby": {
+          "name": "CreatedBy",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": true,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "CreatedBy"
+        },
+        "createddttm": {
+          "name": "CreatedDTTM",
+          "data_type": "datetime",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": true,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "CreatedDTTM"
+        },
+        "updatedby": {
+          "name": "UpdatedBy",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": true,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UpdatedBy"
+        },
+        "updateddttm": {
+          "name": "UpdatedDTTM",
+          "data_type": "datetime",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": true,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UpdatedDTTM"
+        }
+      },
+      "display_name": "Client",
+      "type": 1,
+      "tenant": false,
+      "member": false,
+      "member_meta": {}
+    },
+    {
+      "name": "onboardingchecklist",
+      "columns": [
+        "id",
+        "userid",
+        "documentname",
+        "iscomplete",
+        "completeddate",
+        "clientid"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": false,
+      "crud_put_enabled": false,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": true,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "userid": {
+          "name": "UserID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "user",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UserID"
+        },
+        "documentname": {
+          "name": "DocumentName",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "DocumentName"
+        },
+        "iscomplete": {
+          "name": "IsComplete",
+          "data_type": "boolean",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "IsComplete"
+        },
+        "completeddate": {
+          "name": "CompletedDate",
+          "data_type": "datetime",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "CompletedDate"
+        },
+        "clientid": {
+          "name": "ClientId",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "client",
+            "column": "id",
+            "display": "displayname"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ClientId"
+        }
+      },
+      "display_name": "OnboardingChecklist",
+      "type": 1,
+      "tenant": false,
+      "member": false,
+      "member_meta": {}
+    },
+    {
+      "name": "contactinfo",
+      "columns": [
+        "id",
+        "userid",
+        "name",
+        "officephone",
+        "telephone",
+        "acceptsmsandcalls",
+        "showemailpublicly",
+        "type",
+        "clientid"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": false,
+      "crud_put_enabled": false,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "userid": {
+          "name": "UserID",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "user",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UserID"
+        },
+        "name": {
+          "name": "Name",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Name"
+        },
+        "officephone": {
+          "name": "OfficePhone",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "OfficePhone"
+        },
+        "telephone": {
+          "name": "Telephone",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Telephone"
+        },
+        "acceptsmsandcalls": {
+          "name": "AcceptSmsAndCalls",
+          "data_type": "boolean",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "AcceptSmsAndCalls"
+        },
+        "showemailpublicly": {
+          "name": "ShowEmailPublicly",
+          "data_type": "boolean",
+          "required": true,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ShowEmailPublicly"
+        },
+        "type": {
+          "name": "Type",
+          "data_type": "string",
+          "required": true,
+          "display": false,
+          "options": {
+            "max_length": 50
+          },
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Type"
+        },
+        "clientid": {
+          "name": "ClientId",
+          "data_type": "guid",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {
+            "table": "client",
+            "column": "id",
+            "display": "name"
+          },
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ClientId"
+        }
+      },
+      "display_name": "ContactInfo",
+      "type": 1,
+      "tenant": false,
+      "member": false,
+      "member_meta": {}
+    },
+    {
+      "name": "user_members",
+      "columns": [
+        "id",
+        "name",
+        "email",
+        "password",
+        "userid",
+        "joined",
+        "token"
+      ],
+      "crud_get_enabled": true,
+      "crud_post_enabled": true,
+      "crud_delete_enabled": false,
+      "crud_soft_delete_enabled": false,
+      "crud_put_enabled": true,
+      "external_fields": {
+        "id": {
+          "name": "ID",
+          "data_type": "int",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": true,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "ID"
+        },
+        "name": {
+          "name": "Name",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": true,
+          "display_name": "Name"
+        },
+        "email": {
+          "name": "Email",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Email"
+        },
+        "password": {
+          "name": "Password",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Password"
+        },
+        "userid": {
+          "name": "UserID",
+          "data_type": "int",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "UserID"
+        },
+        "joined": {
+          "name": "Joined",
+          "data_type": "boolean",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Joined"
+        },
+        "token": {
+          "name": "token",
+          "data_type": "string",
+          "required": false,
+          "display": false,
+          "options": {},
+          "reference": {},
+          "primary": false,
+          "session": false,
+          "soft_delete": {
+            "configured": false
+          },
+          "alterable": false,
+          "display_name": "Token"
+        }
+      },
+      "display_name": "User Members",
+      "type": 1,
+      "tenant": false,
+      "member": true,
+      "member_meta": {
+        "tenant_reference_column": "userid",
+        "joined_flag_column": "joined"
+      }
+    }
+  ]
+}
